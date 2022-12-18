@@ -1,6 +1,13 @@
 {
-  "version": "0.0.4",
+  "version": "0.1.0",
   "license": "MIT",
+  "name": "@bemedev/x-guard",
+  "description": "Guard reducer for state machines",
+  "author": {
+    "name": "chlbri",
+    "email": "bri_lvi@icloud.com",
+    "url": "https://bemedev.vercel.app"
+  },
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "module": "lib/index.mjs",
@@ -17,7 +24,7 @@
     "build": "rm -rf lib && pnpm run rollup",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest --passWithNoTests",
-    "remove": "rm -rf lib node_modules pnpm-lock.yaml",
+    "remove": "rm -rf node_modules pnpm-lock.yaml",
     "clean": "pnpm run remove && pnpm run config",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "eslint": "eslint \"{src/**/*,App}.{ts,tsx}\"",
@@ -26,8 +33,6 @@
     "postpublish": "git fetch & git pull",
     "prepublishOnly": "pnpm run build && pnpm run lint"
   },
-  "name": "@bemedev/x-interpret-react",
-  "author": "chlbri <bri_lvi@icloud.com>",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
@@ -42,6 +47,7 @@
     "rollup-plugin-dts": "^5.0.0",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-tsconfig-paths": "^1.4.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.9.3",
     "vite": "^3.2.4",
