@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { reduceGuards } from './guards';
+import reduceGuards from './guards';
 import { returnFalse, returnTrue } from './helpers';
 import { SimpleGuardDef } from './types';
 

@@ -19,7 +19,7 @@ function reduceGuardsOr<TA = any, TC extends object = object>(
   }, returnFalse);
 }
 
-export function reduceGuards<TA = any, TC extends object = object>(
+export default function reduceGuards<TA = any, TC extends object = object>(
   values?: GuardDefs<TA, TC>,
 ): SimpleGuardDef<TA, TC> {
   if (!values) return returnTrue;
