@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "name": "@bemedev/x-guard",
   "description": "Guard reducer for state machines",
@@ -22,7 +22,7 @@
     "rollup": "rollup -c",
     "prepare": "husky install",
     "build": "rm -rf lib && pnpm run rollup",
-    "test": "vitest run --passWithNoTests",
+    "test": "pnpm run build &&  vitest run --passWithNoTests",
     "test:watch": "vitest --passWithNoTests",
     "remove": "rm -rf node_modules pnpm-lock.yaml",
     "clean": "pnpm run remove && pnpm run config",

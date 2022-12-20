@@ -2,14 +2,13 @@
 
 import dts from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';
-import { terser } from 'rollup-plugin-terser';
 import tsConfigPaths from 'rollup-plugin-tsconfig-paths';
 
 /** @type {(value: string) => import('rollup').RollupOptions} */
 const bundleDts = value => ({
   input: `src/${value}.ts`,
   external: id => !/^[./]/.test(id),
-  plugins: [dts()],
+  plugins: [dts(), tsConfigPaths()],
   output: {
     format: 'es',
     file: `lib/${value}.d.ts`,
@@ -21,7 +20,7 @@ const bundleJS = value => {
   return {
     input: `src/${value}.ts`,
     external: ['lodash.clonedeep', 'nanoid'],
-    plugins: [esbuild(), terser({}), tsConfigPaths()],
+    plugins: [esbuild(), tsConfigPaths()],
     output: [
       {
         format: 'cjs',
