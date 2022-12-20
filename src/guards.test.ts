@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
+import reduceGuards from './guards';
 import { returnFalse, returnTrue } from './helpers';
-import reduceGuards from './index';
 import { SimpleGuardDef } from './types';
 
 test('Not guards return empty boolean func', () => {
